@@ -1,5 +1,7 @@
 #EXERCISE QUESTIONS
 
+import math
+
 """
 
 Solving python programming exercises posed by Zhiwehu
@@ -152,6 +154,70 @@ def TestWordManipulatorFunctions():
     word.getString()
     word.printString()
 
+#----------------------------------------#
+
+"""
+Question 6
+Level 2
+
+Question:
+Write a program that calculates and prints the value according to the given formula:
+Q = Square root of [(2 * C * D)/H]
+Following are the fixed values of C and H:
+C is 50. H is 30.
+D is the variable whose values should be input to your program in a comma-separated sequence.
+Example
+Let us assume the following comma separated input sequence is given to the program:
+100,150,180
+The output of the program should be:
+18,22,24
+
+Hints:
+If the output received is in decimal form, it should be rounded off to its
+nearest value
+(for example, if the output received is 26.0, it should be printed as 26)
+In case of input data being supplied to the question,
+it should be assumed to be a console input. 
+"""
+
+"""
+Reads an input of numbers and stores them into a list
+"""
+def ReadInput():
+    stringInputs = raw_input("Input numbers: ")
+    numbers = list()
+    
+    groupOfNum = list(stringInputs.split(",")) #Store into a list
+    for num in groupOfNum:
+        numbers.append(int(num))
+    return numbers
+
+"""
+Calculate the equation (Square root of [2* C * D)/H]
+C is 50 and H is 30 and D is each number from the list of numbers
+"""
+def CalculateEquation(numbers):
+    c = 50
+    h = 30
+    outputs = list()
+    for i in numbers:
+        outputs.append(round(math.sqrt(2 * c * float(i)/h)))
+    return outputs
+
+"""
+Print the outputs
+"""
+def PrintOutputs(outputs):
+    for i in outputs:
+        print str(i) + ", ",
+        
+"""
+Combines all three functions to solve question three
+"""
+def ResolveQuestionSix():
+    numbers = ReadInput()
+    outputs = CalculateEquation(numbers)
+    PrintOutputs(outputs)
 
 def main():
     FindRangeOfNumbers(2000, 3200, 7, 5)
