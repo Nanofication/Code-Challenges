@@ -80,6 +80,45 @@ def MapToSquare(maxNum):
         squaredIndices[i] = i * i
     print squaredIndices
 
+#----------------------------------------#
+"""
+Question 4
+Level 1
+
+Question:
+Write a program which accepts a sequence of comma-separated numbers from
+console and generate a list and a tuple which contains every number.
+Suppose the following input is supplied to the program:
+34,67,55,33,12,98
+Then, the output should be:
+['34', '67', '55', '33', '12', '98']
+('34', '67', '55', '33', '12', '98')
+"""
+
+"""
+
+Read a sequence of numbers inputted by the user and separated by commas
+
+"""
+def ReadSequence():
+    numbers = raw_input("Type numbers: ")
+    ConvertToList(numbers)
+    ConvertToTuple(numbers)
+    
+"""
+Convert a sequence of numbers into a list
+"""
+def ConvertToList(sequenceNum):
+    listOfNum = sequenceNum.split(",")
+    print listOfNum
+
+"""
+Convert a sequence of numbers into a tuple
+"""
+def ConvertToTuple(sequenceNum):
+    tupleOfNum = sequenceNum
+    print tupleOfNum
+
 def main():
     FindRangeOfNumbers(2000, 3200, 7, 5)
     print Factorial(5)
