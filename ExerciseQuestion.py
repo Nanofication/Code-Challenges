@@ -27,8 +27,31 @@ def FindRangeOfNumbers(minimum, maximum, isFactor, notFactor):
         if (i % isFactor == 0) and (i % notFactor != 0):
             print str(i) + ", ",
     
+#----------------------------------------#
 
+"""
+
+Question 2
+Level 1
+
+Question:
+Write a program which can compute the factorial of a given numbers.
+The results should be printed in a comma-separated sequence on a single line.
+Suppose the following input is supplied to the program:
+8
+Then, the output should be:
+40320
+
+"""
+
+"""
+Computes the factorial of a given number
+"""
+def Factorial(number):
+    if (number == 1):
+        return 1
+    return (number * Factorial(number - 1))
 
 def main():
-    FindRangeOfNumbers(2000, 3200, 7, 5)
-    
+    #FindRangeOfNumbers(2000, 3200, 7, 5)
+    print Factorial(5)
